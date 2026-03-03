@@ -12,4 +12,5 @@ Next.js portfolio (App Router).
 - Links: `src/app/page.tsx`
 - Tabs + writing links: `src/components/portfolio-tabs.tsx`
 - MFA Day 1 date: `src/app/page.tsx` (`<MfaCounter startDate="YYYY-MM-DD" ... />`)
-- Photo: `public/assets/bhavika.png` (recommended square image). Fallback placeholder: `public/assets/bhavika.svg`.
+- Photo: optional (currently not shown).
+- Background image: `public/assets/bg.jpeg` (used behind glass UI).

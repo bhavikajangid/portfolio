@@ -1,5 +1,4 @@
 import { TypingAnimation } from "@/components/magicui/typing-animation";
-import { HeroPhoto } from "@/components/hero-photo";
 import { MfaCounter, MfaDayOnly } from "@/components/mfa-counter";
 import { PortfolioTabs } from "@/components/portfolio-tabs";
 import styles from "./page.module.css";
@@ -11,7 +10,7 @@ const LINKS = {
   youtube: "https://www.youtube.com/@bhavikajangid1",
   substack: "https://bhavikajangid.substack.com/",
   notion: "#",
-  micron: "https://www.micron.com",
+  micron: "https://www.linkedin.com/in/bhavika-jangid/",
   email: "mailto:bhavikajandi02@gmail.com",
 };
 
@@ -22,7 +21,6 @@ export default function Page() {
         <p className={styles.heroGreeting}>Hi 👋</p>
         <h1 className={styles.heroName}>
           <TypingAnimation speedMs={140}>this is Bhavika</TypingAnimation>
-          <HeroPhoto className={styles.heroPhoto} alt="Photo of Bhavika" />
         </h1>
 
         <p className={styles.heroIntro}>

@@ -26,8 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} ${playfair.variable}`}>
-      <body>{children}</body>
+      <body>
+        <div className="site-bg" aria-hidden="true" />
+        <div className="site-content">{children}</div>
+      </body>
     </html>
   );
 }
-

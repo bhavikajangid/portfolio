@@ -15,9 +15,7 @@ body {
     Arial, "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--dark);
   line-height: 1.6;
-  background: radial-gradient(1200px 720px at 18% 14%, var(--aqua), transparent 55%),
-    radial-gradient(980px 640px at 85% 18%, rgba(242, 167, 195, 0.12), transparent 56%),
-    radial-gradient(820px 560px at 56% 92%, rgba(168, 197, 160, 0.1), transparent 60%), var(--bg);
+  background: var(--bg);
 }
 
 :root {
@@ -39,6 +37,32 @@ body {
   --blur: 16px;
 }
 
+.site-content {
+  position: relative;
+  z-index: 1;
+}
+
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(1200px 720px at 18% 14%, var(--aqua), transparent 55%),
+    radial-gradient(980px 640px at 85% 18%, rgba(242, 167, 195, 0.14), transparent 56%),
+    radial-gradient(820px 560px at 56% 92%, rgba(168, 197, 160, 0.12), transparent 60%),
+    linear-gradient(180deg, rgba(251, 251, 254, 0.55), rgba(251, 251, 254, 0.65)),
+    url("/assets/bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .site-bg {
+    backdrop-filter: saturate(115%);
+  }
+}
+
 a {
   color: inherit;
 }
@@ -49,4 +73,3 @@ a {
     --glass-strong: rgba(255, 255, 255, 0.92);
   }
 }
-
