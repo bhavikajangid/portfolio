@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--dark);
+  line-height: 1.6;
+  background: radial-gradient(1200px 720px at 18% 14%, var(--aqua), transparent 55%),
+    radial-gradient(980px 640px at 85% 18%, rgba(242, 167, 195, 0.12), transparent 56%),
+    radial-gradient(820px 560px at 56% 92%, rgba(168, 197, 160, 0.1), transparent 60%), var(--bg);
+}
+
+:root {
+  --bg: #fbfbfe;
+  --aqua: rgba(78, 216, 212, 0.12);
+
+  --pink: #f2a7c3;
+  --pink-soft: rgba(242, 167, 195, 0.18);
+  --green: #a8c5a0;
+  --green-soft: rgba(168, 197, 160, 0.18);
+
+  --dark: #14151b;
+  --muted: rgba(20, 21, 27, 0.62);
+  --border: rgba(20, 21, 27, 0.1);
+
+  --glass: rgba(255, 255, 255, 0.52);
+  --glass-strong: rgba(255, 255, 255, 0.66);
+  --shadow: 0 22px 70px rgba(20, 21, 27, 0.1);
+  --blur: 16px;
+}
+
+a {
+  color: inherit;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --glass: rgba(255, 255, 255, 0.92);
+    --glass-strong: rgba(255, 255, 255, 0.92);
+  }
+}
+
