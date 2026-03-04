@@ -41,57 +41,84 @@ export function PortfolioTabs() {
       </div>
 
       <div className={`${styles.tabPanel} ${active === "experience" ? styles.tabPanelActive : ""}`}>
-        <div className={styles.expBlock}>
-          <div className={styles.expCompany}>Micron Technology</div>
-          <div className={styles.expHeader}>
-            <span className={styles.expTitle}>Software Engineer</span>
-            <span className={styles.expMeta}>July 2024 – Present · Hyderabad</span>
-          </div>
-          <ul className={styles.expBullets}>
-            <li>
-              Architected and deployed a microservices-based metadata governance platform on
-              Kubernetes (GKE) using OpenMetadata, enabling automated lineage tracking across 50K+
-              datasets and reducing manual data discovery efforts by 75%.
-            </li>
-            <li>
-              Designed and deployed production-grade autonomous AI agents on GKE using ADK with
-              custom MCP integrations, automating Jira issue triage workflows and reducing
-              troubleshooting effort by 90%.
-            </li>
-            <li>
-              Engineered scalable, event-driven ingestion services using Cloud Run and GCP
-              Workflows, improving data synchronization throughput by 40% while lowering
-              operational costs.
-            </li>
-            <li>
-              Strengthened backend service reliability by implementing lifecycle management,
-              centralized state handling, and structured dependency patterns within FastAPI
-              microservices.
-            </li>
-            <li>
-              Implemented distributed tracing using OpenTelemetry and GCP Cloud Trace, enabling
-              end-to-end request observability and reducing MTTR by 60%.
-            </li>
-          </ul>
-        </div>
+        <div className={styles.liCard}>
+          <h3 className={styles.liHeading}>Experience</h3>
 
-        <div className={styles.expBlock}>
-          <div className={styles.expCompany}>Micron Technology</div>
-          <div className={styles.expHeader}>
-            <span className={styles.expTitle}>Data Engineering Intern</span>
-            <span className={styles.expMeta}>Jan 2024 – July 2024 · Hyderabad</span>
-          </div>
-          <ul className={styles.expBullets}>
-            <li>
-              Built high-concurrency RESTful backend services using FastAPI on Kubernetes (GKE),
-              handling 5K+ concurrent requests with 99.9% uptime and reducing latency by 30% via
-              Redis caching and async task queues (Celery).
-            </li>
-            <li>
-              Built an AngularJS-based platform for streamlined product instance registration, bug
-              tracking, and dashboard management.
-            </li>
-          </ul>
+          <section className={styles.liCompany}>
+            <div className={styles.liCompanyRow}>
+              <div className={styles.liLogo} aria-hidden="true">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  className={styles.liLogoImg}
+                  src="/assets/micron-logo.jpeg"
+                  alt=""
+                  width={44}
+                  height={44}
+                />
+              </div>
+              <div className={styles.liCompanyInfo}>
+                <p className={styles.liCompanyName}>Micron Technology</p>
+                <p className={styles.liCompanyMeta}>Hyderabad, Telangana, India</p>
+              </div>
+            </div>
+
+            <div className={styles.liRoles}>
+              <article className={styles.liRole}>
+                <div className={styles.liRoleDot} aria-hidden="true" />
+                <div className={styles.liRoleBody}>
+                  <p className={styles.liRoleTitle}>Software Engineer</p>
+                  <p className={styles.liRoleMeta}>July 2024 — Present | Hyderabad</p>
+                  <ul className={styles.liBullets}>
+                    <li>
+                      Architected and deployed a microservices-based metadata governance platform on
+                      Kubernetes (GKE) using OpenMetadata, enabling automated lineage tracking
+                      across 50K+ datasets and reducing manual data discovery efforts by 75%.
+                    </li>
+                    <li>
+                      Designed and deployed production-grade autonomous AI agents on GKE using ADK
+                      with custom MCP integrations, automating Jira issue triage workflows and
+                      reducing troubleshooting effort by 90%.
+                    </li>
+                    <li>
+                      Engineered scalable, event-driven ingestion services using Cloud Run and GCP
+                      Workflows, improving data synchronization throughput by 40% while lowering
+                      operational costs.
+                    </li>
+                    <li>
+                      Strengthened backend service reliability by implementing lifecycle
+                      management, centralized state handling, and structured dependency patterns
+                      within FastAPI microservices, improving runtime stability and horizontal
+                      scalability.
+                    </li>
+                    <li>
+                      Implemented distributed tracing using OpenTelemetry and GCP Cloud Trace,
+                      enabling end-to-end request observability across services and reducing mean
+                      time to resolution (MTTR) by 60%.
+                    </li>
+                  </ul>
+                </div>
+              </article>
+
+              <article className={styles.liRole}>
+                <div className={styles.liRoleDot} aria-hidden="true" />
+                <div className={styles.liRoleBody}>
+                  <p className={styles.liRoleTitle}>Data Engineering Intern</p>
+                  <p className={styles.liRoleMeta}>Jan 2024 — July 2024 | Hyderabad</p>
+                  <ul className={styles.liBullets}>
+                    <li>
+                      Built high-concurrency RESTful backend services using FastAPI on Kubernetes
+                      (GKE), handling 5K+ concurrent requests with 99.9% uptime and reducing
+                      latency by 30% via Redis caching and asynchronous task queues (Celery).
+                    </li>
+                    <li>
+                      Built an AngularJS-based platform for streamlined product instance
+                      registration, bug tracking, and dashboard management.
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </section>
         </div>
       </div>
 
@@ -154,4 +181,3 @@ export function PortfolioTabs() {
     </section>
   );
 }
-

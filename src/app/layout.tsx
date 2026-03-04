@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Playfair_Display } from "next/font/google";
+import { BackgroundMedia } from "@/components/background-media";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${playfair.variable}`}>
       <body>
-        <div className="site-bg" aria-hidden="true" />
+        <BackgroundMedia />
         <div className="site-content">{children}</div>
       </body>
     </html>

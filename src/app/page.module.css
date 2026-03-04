@@ -25,9 +25,10 @@
 }
 
 .heroName {
-  font-family: var(--font-serif), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: clamp(2.5rem, 9vw, 4.5rem);
-  font-weight: 400;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial;
+  font-size: 1.8rem;
+  font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin: 0 0 32px;
@@ -38,17 +39,99 @@
   flex-wrap: wrap;
 }
 
-.heroPhoto {
-  width: clamp(54px, 8vw, 74px);
-  height: clamp(54px, 8vw, 74px);
+.miniThoughtAnchor {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  outline: none;
+}
+
+.miniThoughtAnchor::after {
+  content: "";
+  position: absolute;
+  right: -0.95em;
+  top: 50%;
+  width: 0.7em;
+  height: 0.7em;
+  transform: translateY(-45%);
   border-radius: 999px;
-  object-fit: cover;
-  object-position: 50% 35%;
+  background: linear-gradient(135deg, rgba(78, 216, 212, 0.95), rgba(242, 167, 195, 0.95));
+  box-shadow: 0 10px 30px rgba(20, 21, 27, 0.12);
+}
+
+.miniThoughtAnchor::before {
+  content: "";
+  position: absolute;
+  right: -0.45em;
+  top: 50%;
+  width: 0.38em;
+  height: 0.38em;
+  transform: translateY(-15%);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(78, 216, 212, 0.75), rgba(242, 167, 195, 0.75));
+  opacity: 0.9;
+}
+
+.miniThoughtAnchor:focus-visible {
+  border-radius: 10px;
+  box-shadow: 0 0 0 4px rgba(78, 216, 212, 0.18);
+}
+
+.miniThoughtBubble {
+  position: absolute;
+  left: auto;
+  right: 0;
+  bottom: calc(100% + 12px);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgba(20, 21, 27, 0.78);
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(20, 21, 27, 0.12);
-  box-shadow: 0 18px 60px rgba(20, 21, 27, 0.16);
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(var(--blur)) saturate(120%);
-  -webkit-backdrop-filter: blur(var(--blur)) saturate(120%);
+  border-radius: 999px;
+  box-shadow: 0 22px 70px rgba(20, 21, 27, 0.12);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 160ms ease, transform 160ms ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.miniThoughtBubble::before,
+.miniThoughtBubble::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(20, 21, 27, 0.12);
+  border-radius: 999px;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.miniThoughtBubble::before {
+  width: 18px;
+  height: 18px;
+  right: 14px;
+  bottom: -9px;
+}
+
+.miniThoughtBubble::after {
+  width: 12px;
+  height: 12px;
+  right: 4px;
+  bottom: -18px;
+}
+
+.miniThoughtAnchor:hover .miniThoughtBubble,
+.miniThoughtAnchor:focus-visible .miniThoughtBubble {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .heroIntro {
@@ -58,6 +141,60 @@
   line-height: 1.95;
   color: var(--dark);
   letter-spacing: -0.01em;
+}
+
+.atCompany {
+  font-weight: 600;
+  color: rgba(20, 21, 27, 0.72);
+}
+
+.imageIconLink {
+  --icon-url: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
+  height: 2.05em;
+  text-decoration: none;
+  vertical-align: middle;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0 2px;
+  cursor: pointer;
+  transition: transform 180ms ease, filter 180ms ease;
+  filter: drop-shadow(0 16px 44px rgba(20, 21, 27, 0.10));
+  position: relative;
+}
+
+.imageIconLink::before {
+  content: "";
+  width: 2.665em;
+  height: 2.665em;
+  background-image: var(--icon-url);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+}
+
+.imageIconLink:hover {
+  transform: translateY(-1px) scale(1.02);
+  filter: drop-shadow(0 22px 64px rgba(20, 21, 27, 0.14));
+}
+
+.imageIconLink:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(78, 216, 212, 0.22);
+  border-radius: 12px;
+}
+
+.linkedinChip {
+  --icon-url: url("/assets/linkedin-logo.png");
+}
+
+.linkedinChip:hover,
+.linkedinChip:focus-visible {
+  width: auto;
 }
 
 .inlineChip {
@@ -77,8 +214,8 @@
   transition: border-color 0.2s, background 0.2s;
   white-space: nowrap;
   box-shadow: 0 10px 36px rgba(20, 21, 27, 0.08);
-  backdrop-filter: blur(var(--blur)) saturate(120%);
-  -webkit-backdrop-filter: blur(var(--blur)) saturate(120%);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .inlineChip:hover {
@@ -93,8 +230,151 @@
   transition: transform 180ms ease;
 }
 
+.inlineChip img {
+  flex-shrink: 0;
+  transition: transform 180ms ease;
+}
+
 .inlineChip:hover svg {
   transform: translateY(-1px) scale(1.15);
+}
+
+.inlineChip:hover img {
+  transform: translateY(-1px) scale(1.12);
+}
+
+.substackChip {
+  --icon-url: url("/assets/substack-logo.png");
+}
+
+.substackChip::before {
+  transform: scale(0.55);
+  transform-origin: left center;
+}
+
+.substackChip:hover,
+.substackChip:focus-visible {
+  width: auto;
+}
+
+.substackChip:hover::before,
+.substackChip:focus-visible::before {
+  transform: scale(0.605);
+}
+
+.spotifyChip {
+  --icon-url: url("/assets/spotify-logo.png");
+}
+
+.iconStack {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.iconStackItem {
+  width: 2.665em;
+  height: 2.665em;
+  border-radius: 0.7em;
+  border: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, margin-left 220ms ease;
+  position: relative;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(0 16px 44px rgba(20, 21, 27, 0.12));
+}
+
+.iconStackItem svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* Stack overlap */
+.iconStackItem + .iconStackItem {
+  margin-left: -0.75em;
+}
+
+/* On hover/focus, open the stack with enough spacing */
+.iconStack:hover .iconStackItem + .iconStackItem,
+.iconStack:focus-within .iconStackItem + .iconStackItem {
+  margin-left: 0.55em;
+}
+
+.iconStackItem:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(78, 216, 212, 0.22), 0 22px 70px rgba(20, 21, 27, 0.14);
+}
+
+/* Slight rotation like the reference */
+.iconInstagram {
+  background-image: url("/assets/insta-logo.png");
+  transform: rotate(-10deg) translateY(2px);
+  z-index: 3;
+  animation: stackIn 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 90ms;
+}
+
+.iconYoutube {
+  background-image: url("/assets/yt-logo.png");
+  transform: rotate(6deg) translateY(-1px);
+  z-index: 2;
+  animation: stackIn 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 140ms;
+}
+
+.iconX {
+  background-image: url("/assets/x-logo.png");
+  transform: rotate(-4deg) translateY(1px);
+  z-index: 1;
+  animation: stackIn 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 190ms;
+}
+
+@keyframes stackIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96) rotate(0deg);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hover: make them "pop" and fan out slightly */
+.iconStack:hover .iconStackItem,
+.iconStack:focus-within .iconStackItem {
+  filter: drop-shadow(0 22px 64px rgba(20, 21, 27, 0.16));
+}
+
+.iconStack:hover .iconInstagram,
+.iconStack:focus-within .iconInstagram {
+  transform: translateY(-4px) rotate(0deg) scale(1.06);
+}
+
+.iconStack:hover .iconYoutube,
+.iconStack:focus-within .iconYoutube {
+  transform: translateY(-6px) rotate(0deg) scale(1.07);
+}
+
+.iconStack:hover .iconX,
+.iconStack:focus-within .iconX {
+  transform: translateY(-4px) rotate(0deg) scale(1.06);
+}
+
+.iconStackItem:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(78, 216, 212, 0.22), 0 22px 70px rgba(20, 21, 27, 0.14);
 }
 
 .divider {
@@ -116,8 +396,8 @@
   margin-bottom: 40px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(var(--blur)) saturate(120%);
-  -webkit-backdrop-filter: blur(var(--blur)) saturate(120%);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .mfaCard::before {
@@ -292,5 +572,16 @@
 @media (prefers-reduced-motion: reduce) {
   .inlineChip svg {
     transition: none;
+  }
+  .miniThoughtBubble {
+    transition: none;
+  }
+  .iconStackItem {
+    transition: none;
+  }
+  .iconInstagram,
+  .iconYoutube,
+  .iconX {
+    animation: none;
   }
 }

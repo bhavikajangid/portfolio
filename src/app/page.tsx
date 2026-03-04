@@ -1,6 +1,7 @@
-import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { MfaCounter, MfaDayOnly } from "@/components/mfa-counter";
 import { PortfolioTabs } from "@/components/portfolio-tabs";
+import { SocialIcon } from "@/components/social-icon";
+import { TypedHeadline } from "@/components/typed-headline";
 import styles from "./page.module.css";
 
 const LINKS = {
@@ -9,7 +10,9 @@ const LINKS = {
   instagram: "https://www.instagram.com/bhavarchive",
   youtube: "https://www.youtube.com/@bhavikajangid1",
   substack: "https://bhavikajangid.substack.com/",
-  notion: "#",
+  spotify:
+    "https://open.spotify.com/user/n32ykesuzv8yy3s0ryt2jhvao?si=4083d7e06ff34ede",
+  notion: "https://www.notion.so/90-Day-MFA-31916729b68f803584f8f869bffab190?source=copy_link",
   micron: "https://www.linkedin.com/in/bhavika-jangid/",
   email: "mailto:bhavikajandi02@gmail.com",
 };
@@ -19,79 +22,77 @@ export default function Page() {
     <div className={styles.container}>
       <section className={styles.hero}>
         <p className={styles.heroGreeting}>Hi 👋</p>
-        <h1 className={styles.heroName}>
-          <TypingAnimation speedMs={140}>this is Bhavika</TypingAnimation>
-        </h1>
+        <TypedHeadline text="this is Bhavika" speedMs={180} />
 
         <p className={styles.heroIntro}>
-          I&apos;m a software engineer{" "}
-          <a className={styles.inlineChip} href={LINKS.micron} target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="2" y="3" width="20" height="14" rx="2" />
-              <path d="M8 21h8M12 17v4" />
-            </svg>
-            @Micron
-          </a>
-          ,
+          I&apos;m a{" "}
+          <span className={styles.miniThoughtAnchor} tabIndex={0}>
+            software engineer
+            <span className={styles.miniThoughtBubble} role="tooltip" aria-hidden="true">
+              probably a personality hire
+            </span>
+          </span>{" "}
+          <span className={styles.atCompany}>@Micron</span>{" "}
+          <SocialIcon
+            className={`${styles.imageIconLink} ${styles.linkedinChip}`}
+            href={LINKS.micron}
+            ariaLabel="LinkedIn"
+            tooltip="bhavika-jangid"
+          />
+          .
         </p>
         <p className={styles.heroIntro}>
           I write{" "}
-          <a className={styles.inlineChip} href={LINKS.substack} target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" fill="#FF6719">
-              <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
-            </svg>
-            Substack
-          </a>
-          ,
+          <SocialIcon
+            className={`${styles.imageIconLink} ${styles.substackChip}`}
+            href={LINKS.substack}
+            ariaLabel="Substack"
+            tooltip="bhavikajangid.substack.com"
+          />
+          .
         </p>
         <p className={styles.heroIntro}>
           create content{" "}
-          <a className={styles.inlineChip} href={LINKS.instagram} target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" width="16" height="16">
-              <defs>
-                <radialGradient id="ig" cx="30%" cy="107%" r="150%">
-                  <stop offset="0%" stopColor="#fdf497" />
-                  <stop offset="5%" stopColor="#fdf497" />
-                  <stop offset="45%" stopColor="#fd5949" />
-                  <stop offset="60%" stopColor="#d6249f" />
-                  <stop offset="90%" stopColor="#285AEB" />
-                </radialGradient>
-              </defs>
-              <rect width="24" height="24" rx="5" fill="url(#ig)" />
-              <rect
-                x="2"
-                y="2"
-                width="20"
-                height="20"
-                rx="4"
-                fill="none"
-                stroke="white"
-                strokeWidth="1.8"
-              />
-              <circle cx="12" cy="12" r="4.5" fill="none" stroke="white" strokeWidth="1.8" />
-              <circle cx="17.5" cy="6.5" r="1.2" fill="white" />
-            </svg>
-            bhavarchive
-          </a>{" "}
-          <a className={styles.inlineChip} href={LINKS.youtube} target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" fill="#FF0000" width="16" height="16">
-              <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z" />
-            </svg>
-            YouTube
-          </a>{" "}
-          <a className={styles.inlineChip} href={LINKS.x} target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" fill="#111111" width="16" height="16">
-              <path d="M18.9 4.5h-2.6l-4 5.1-4.5-5.1H5.1l5.9 6.8L5 19.5h2.6l4.7-5.9 5.1 5.9h2.6l-6.6-7.6 5.5-7.4Z" />
-            </svg>
-            X
-          </a>
-          ,
+          <span className={styles.iconStack} aria-label="Platforms">
+            <SocialIcon
+              className={`${styles.iconStackItem} ${styles.iconInstagram}`}
+              href={LINKS.instagram}
+              ariaLabel="Instagram"
+              tooltip="@bhavarchive"
+            />
+            <SocialIcon
+              className={`${styles.iconStackItem} ${styles.iconYoutube}`}
+              href={LINKS.youtube}
+              ariaLabel="YouTube"
+              tooltip="@bhavikajangid1"
+            />
+            <SocialIcon
+              className={`${styles.iconStackItem} ${styles.iconX}`}
+              href={LINKS.x}
+              ariaLabel="X"
+              tooltip="@bhavika_jangid_"
+            />
+          </span>
+          .
         </p>
         <p className={styles.heroIntro}>
-          build on the side{" "}
-          <span style={{ fontSize: "0.85rem", color: "var(--muted)", fontStyle: "italic" }}>
-            — coming soon
+          i like to{" "}
+          <span className={styles.miniThoughtAnchor} tabIndex={0}>
+            create things
+            <span className={styles.miniThoughtBubble} role="tooltip" aria-hidden="true">
+              in my head
+            </span>
           </span>
+        </p>
+        <p className={styles.heroIntro}>
+          i make good playlists{" "}
+          <SocialIcon
+            className={`${styles.imageIconLink} ${styles.spotifyChip}`}
+            href={LINKS.spotify}
+            ariaLabel="Spotify"
+            tooltip="playlists"
+          />
+          .
         </p>
       </section>
 

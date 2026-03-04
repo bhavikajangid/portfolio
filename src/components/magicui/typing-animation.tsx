@@ -13,6 +13,10 @@ type TypingAnimationProps = {
    * Show blinking cursor while typing and after completion.
    */
   cursor?: boolean;
+  /**
+   * Fired once when typing completes (or immediately if reduced motion).
+   */
+  onComplete?: () => void;
 };
 
 function prefersReducedMotion(): boolean {
@@ -25,11 +29,14 @@ export function TypingAnimation({
   className,
   speedMs = 90,
   cursor = true,
+  onComplete,
 }: TypingAnimationProps) {
   const text = String(children);
   const [length, setLength] = React.useState(0);
+  const hasCompletedRef = React.useRef(false);
 
   React.useEffect(() => {
+    hasCompletedRef.current = false;
     if (prefersReducedMotion()) {
       setLength(text.length);
       return;
@@ -58,6 +65,13 @@ export function TypingAnimation({
   }, [speedMs, text]);
 
   const shown = text.slice(0, length);
+
+  React.useEffect(() => {
+    if (hasCompletedRef.current) return;
+    if (length < text.length) return;
+    hasCompletedRef.current = true;
+    onComplete?.();
+  }, [length, onComplete, text.length]);
 
   return (
     <span className={className} style={{ display: "inline-flex", alignItems: "center" }}>
@@ -99,4 +113,3 @@ export function TypingAnimation({
     </span>
   );
 }
-

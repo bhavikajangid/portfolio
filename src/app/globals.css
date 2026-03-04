@@ -34,7 +34,7 @@ body {
   --glass: rgba(255, 255, 255, 0.52);
   --glass-strong: rgba(255, 255, 255, 0.66);
   --shadow: 0 22px 70px rgba(20, 21, 27, 0.1);
-  --blur: 16px;
+  --blur: 0px;
 }
 
 .site-content {
@@ -46,20 +46,79 @@ body {
   position: fixed;
   inset: 0;
   z-index: 0;
-  background:
-    radial-gradient(1200px 720px at 18% 14%, var(--aqua), transparent 55%),
-    radial-gradient(980px 640px at 85% 18%, rgba(242, 167, 195, 0.14), transparent 56%),
-    radial-gradient(820px 560px at 56% 92%, rgba(168, 197, 160, 0.12), transparent 60%),
-    linear-gradient(180deg, rgba(251, 251, 254, 0.55), rgba(251, 251, 254, 0.65)),
-    url("/assets/bg.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
+  background: var(--bg);
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
 }
 
-@supports (backdrop-filter: blur(1px)) {
+.site-bg__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  object-position: center;
+  transform: translate(-50%, -50%);
+  opacity: 0.42;
+  filter: saturate(110%) contrast(102%);
+  pointer-events: none;
+}
+
+.site-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1200px 720px at 18% 14%, var(--aqua), transparent 55%),
+    radial-gradient(980px 640px at 85% 18%, rgba(242, 167, 195, 0.14), transparent 56%),
+    radial-gradient(820px 560px at 56% 92%, rgba(168, 197, 160, 0.12), transparent 60%),
+    linear-gradient(180deg, rgba(251, 251, 254, 0.68), rgba(251, 251, 254, 0.78));
+  pointer-events: none;
+}
+
+.site-bg-controls {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.site-bg__sound {
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(20, 21, 27, 0.14);
+  background: rgba(255, 255, 255, 0.62);
+  color: rgba(20, 21, 27, 0.78);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 18px 60px rgba(20, 21, 27, 0.12);
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.site-bg__sound:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 22px 70px rgba(20, 21, 27, 0.14);
+}
+
+.site-bg__sound:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(78, 216, 212, 0.22), 0 22px 70px rgba(20, 21, 27, 0.14);
+}
+
+@supports (height: 100svh) {
   .site-bg {
-    backdrop-filter: saturate(115%);
+    height: 100svh;
+  }
+  .site-bg__video {
+    height: 100svh;
   }
 }
 
