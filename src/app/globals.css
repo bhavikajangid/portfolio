@@ -25,6 +25,7 @@ body {
 
   --pink: #f2a7c3;
   --pink-soft: rgba(242, 167, 195, 0.18);
+  --lavender: #9a86ff;
   --green: #a8c5a0;
   --green-soft: rgba(168, 197, 160, 0.18);
 
@@ -32,8 +33,8 @@ body {
   --muted: rgba(20, 21, 27, 0.62);
   --border: rgba(20, 21, 27, 0.1);
 
-  --glass: rgba(255, 255, 255, 0.52);
-  --glass-strong: rgba(255, 255, 255, 0.66);
+  --glass: rgba(255, 255, 255, 0.48);
+  --glass-strong: rgba(255, 255, 255, 0.62);
   --shadow: 0 22px 70px rgba(20, 21, 27, 0.1);
   --blur: 0px;
 }
@@ -61,7 +62,7 @@ body {
   height: 100%;
   object-fit: contain;
   object-position: center;
-  opacity: 0.9;
+  opacity: 1;
   filter: none;
   pointer-events: none;
 }

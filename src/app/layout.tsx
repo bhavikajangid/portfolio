@@ -1,18 +1,30 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
+import { Comfortaa, Pacifico, Playfair_Display, Poppins } from "next/font/google";
 import { BackgroundMedia } from "@/components/background-media";
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-serif",
   weight: ["400", "700"],
+});
+
+const comfortaa = Comfortaa({
+  subsets: ["latin"],
+  variable: "--font-intro",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const pacifico = Pacifico({
+  subsets: ["latin"],
+  variable: "--font-pacifico",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +38,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${playfair.variable}`}>
+    <html
+      lang="en"
+      className={`${poppins.variable} ${playfair.variable} ${comfortaa.variable} ${pacifico.variable}`}
+    >
       <body>
         <BackgroundMedia />
         <div className="site-content">{children}</div>

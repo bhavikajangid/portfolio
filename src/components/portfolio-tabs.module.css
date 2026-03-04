@@ -1,5 +1,7 @@
 .tabsWrap {
   margin-top: 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial;
 }
 
 .tabsBar {
@@ -16,8 +18,10 @@
   cursor: pointer;
   font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
     Arial;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: rgba(20, 21, 27, 0.72);
   padding: 10px 20px;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
@@ -28,13 +32,13 @@
 }
 
 .tabBtn:hover {
-  background: rgba(255, 255, 255, 0.72);
+  background: linear-gradient(90deg, rgba(78, 216, 212, 0.26), rgba(242, 167, 195, 0.26));
   border-color: rgba(78, 216, 212, 0.34);
   color: var(--dark);
 }
 
 .tabBtnActive {
-  background: rgba(255, 255, 255, 0.78);
+  background: linear-gradient(90deg, rgba(78, 216, 212, 0.5), rgba(242, 167, 195, 0.5));
   border-color: rgba(242, 167, 195, 0.38);
   color: var(--dark);
   font-weight: 600;
@@ -59,7 +63,8 @@
 }
 
 .liHeading {
-  font-family: var(--font-serif), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: var(--font-intro), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial;
   font-size: 1.35rem;
   font-weight: 700;
   margin: 0 0 14px;
@@ -101,8 +106,11 @@
 
 .liCompanyName {
   margin: 0;
+  font-family: var(--font-intro), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial;
   font-weight: 700;
   letter-spacing: -0.01em;
+  color: var(--pink);
 }
 
 .liCompanyMeta {
@@ -150,8 +158,11 @@
 
 .liRoleTitle {
   margin: 0;
-  font-weight: 700;
+  font-family: var(--font-intro), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial;
+  font-weight: 400;
   letter-spacing: -0.01em;
+  color: var(--lavender);
 }
 
 .liRoleMeta {
@@ -309,6 +320,16 @@
   border: 1px solid rgba(20, 21, 27, 0.08);
 }
 
+.writingCard {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 22px;
+  background: var(--glass);
+  box-shadow: 0 18px 60px rgba(20, 21, 27, 0.08);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 .writingList {
   margin-bottom: 18px;
 }
@@ -367,7 +388,8 @@
 @media (prefers-reduced-transparency: reduce) {
   .tabBtn,
   .projectCard,
-  .liCard {
+  .liCard,
+  .writingCard {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background: rgba(255, 255, 255, 0.92);

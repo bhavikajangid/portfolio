@@ -39,7 +39,10 @@ export function MfaCounter({ startDate, totalDays }: MfaCounterProps) {
 
   return (
     <>
-      <div className={styles.mfaCounter}>{`Day ${day} of ${totalDays}`}</div>
+      <div className={styles.mfaCounter}>
+        Day <span className={styles.mfaDayNumber}>{day}</span> of{" "}
+        <span className={styles.mfaTotalDays}>{totalDays}</span>
+      </div>
       <p className={styles.mfaSub}>Posting every day. Figuring out my direction in public.</p>
       <div className={styles.mfaProgress}>
         <div className={styles.mfaFill} style={{ width: `${pct}%` }} />

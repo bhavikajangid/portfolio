@@ -21,90 +21,91 @@ export default function Page() {
   return (
     <div className={styles.container}>
       <section className={styles.hero}>
-        <p className={styles.heroGreeting}>Hi 👋</p>
-        <h1 className={styles.heroName}>
-          <span className={styles.pinkWord}>this is </span>
-          <span className={styles.aquaWord}>
-            <TypingAnimation speedMs={120}>Bhavika</TypingAnimation>
-          </span>
-        </h1>
+        <div className={`${styles.heroCard} ${styles.heroCardTopGradient}`}>
+          <div className={styles.heroTop}>
+            <p className={styles.heroGreeting}>Hi 👋</p>
+            <h1 className={styles.heroName}>
+              <span className={styles.aquaWord}>this is </span>
+              <span className={`${styles.pinkWord} ${styles.bhavikaWord}`}>
+                <TypingAnimation speedMs={120}>Bhavika</TypingAnimation>
+              </span>
+            </h1>
+          </div>
+        </div>
 
-        <p className={styles.heroIntro}>
-          <span className={styles.aquaWordBold}>I</span> am a{" "}
-          <span
-            className={`${styles.thoughtAnchor} ${styles.thoughtAnchorTop}`}
-            data-thought="probably a personality hire"
-            tabIndex={0}
-            title="probably a personality hire"
-          >
-            software engineer
-          </span>{" "}
-          at <span className={`${styles.pinkWord} ${styles.wordBold}`}>Micron</span>{" "}
-          <SocialIcon
-            className={`${styles.imageIconLink} ${styles.linkedinChip}`}
-            href={LINKS.micron}
-            ariaLabel="LinkedIn"
-            tooltip="bhavika-jangid"
-          />
-          .
-        </p>
-        <p className={`${styles.heroIntro} ${styles.heroRow}`}>
-          <span className={styles.heroRowText}>
-            <span className={styles.aquaWordBold}>I</span>{" "}
-            <a className={styles.writeLink} href={LINKS.substack} target="_blank" rel="noreferrer">
-              <TypingAnimation speedMs={120}>write</TypingAnimation>
-            </a>
-            .
-          </span>
-        </p>
-        <p className={styles.heroIntro}>
-          <span className={styles.aquaWordBold}>I</span> create content{" "}
-          <span className={styles.iconStack} aria-label="Platforms">
-            <SocialIcon
-              className={`${styles.iconStackItem} ${styles.iconInstagram}`}
-              href={LINKS.instagram}
-              ariaLabel="Instagram"
-              tooltip="@bhavarchive"
-            />
-            <SocialIcon
-              className={`${styles.iconStackItem} ${styles.iconYoutube}`}
-              href={LINKS.youtube}
-              ariaLabel="YouTube"
-              tooltip="@bhavikajangid1"
-            />
-            <SocialIcon
-              className={`${styles.iconStackItem} ${styles.iconX}`}
-              href={LINKS.x}
-              ariaLabel="X"
-              tooltip="@bhavika_jangid_"
-            />
-          </span>
-          .
-        </p>
-        <p className={styles.heroIntro}>
-          <span className={styles.aquaWordBold}>I</span> like to{" "}
-          <span
-            className={styles.thoughtAnchor}
-            data-thought="in my head"
-            tabIndex={0}
-            title="in my head"
-          >
-            create things
-          </span>
-        </p>
-        <p className={styles.heroIntro}>
-          <span className={styles.aquaWordBold}>I</span> make good playlists{" "}
-          <SocialIcon
-            className={`${styles.imageIconLink} ${styles.spotifyChip}`}
-            href={LINKS.spotify}
-            ariaLabel="Spotify"
-            tooltip="playlists"
-          />
-          .
-        </p>
+        <div className={styles.heroCard}>
+          <div className={styles.heroBody}>
+            <p className={styles.heroIntro}>
+              <span className={styles.aquaWordBold}>I</span> am a{" "}
+              <span
+                className={`${styles.thoughtAnchor} ${styles.thoughtAnchorTop}`}
+                data-thought="probably a personality hire"
+                tabIndex={0}
+                title="probably a personality hire"
+              >
+                software engineer
+              </span>{" "}
+              at <span className={`${styles.pinkWord} ${styles.wordBold}`}>Micron</span>{" "}
+              <SocialIcon
+                className={`${styles.imageIconLink} ${styles.linkedinChip}`}
+                href={LINKS.micron}
+                ariaLabel="LinkedIn"
+                tooltip="bhavika-jangid"
+              />
+              .
+            </p>
+            <p className={`${styles.heroIntro} ${styles.heroRow}`}>
+              <span className={styles.heroRowText}>
+                <span className={styles.aquaWordBold}>I</span>{" "}
+                <a className={styles.writeLink} href={LINKS.substack} target="_blank" rel="noreferrer">
+                  <TypingAnimation speedMs={120}>write</TypingAnimation>
+                </a>
+                .
+              </span>
+            </p>
+            <p className={styles.heroIntro}>
+              <span className={styles.aquaWordBold}>I</span> create content{" "}
+              <span className={styles.iconStack} aria-label="Platforms">
+                <SocialIcon
+                  className={`${styles.iconStackItem} ${styles.iconInstagram}`}
+                  href={LINKS.instagram}
+                  ariaLabel="Instagram"
+                  tooltip="@bhavarchive"
+                />
+                <SocialIcon
+                  className={`${styles.iconStackItem} ${styles.iconYoutube}`}
+                  href={LINKS.youtube}
+                  ariaLabel="YouTube"
+                  tooltip="@bhavikajangid1"
+                />
+                <SocialIcon
+                  className={`${styles.iconStackItem} ${styles.iconX}`}
+                  href={LINKS.x}
+                  ariaLabel="X"
+                  tooltip="@bhavika_jangid_"
+                />
+              </span>
+              .
+            </p>
+            <p className={styles.heroIntro}>
+              <span className={styles.aquaWordBold}>I</span> like to{" "}
+              <span className={styles.thoughtAnchor} data-thought="in my head" tabIndex={0} title="in my head">
+                create things
+              </span>
+            </p>
+            <p className={styles.heroIntro}>
+              <span className={styles.aquaWordBold}>I</span> make good playlists{" "}
+              <SocialIcon
+                className={`${styles.imageIconLink} ${styles.spotifyChip}`}
+                href={LINKS.spotify}
+                ariaLabel="Spotify"
+                tooltip="playlists"
+              />
+              .
+            </p>
+          </div>
+        </div>
       </section>
-
-      <hr className={styles.divider} />
 
       <div className={styles.topSections}>
         <div className={styles.mfaCard}>
@@ -120,7 +121,7 @@ export default function Page() {
           </div>
         </div>
 
-        <section>
+        <section className={styles.nowCard}>
           <h2 className={styles.sectionTitle}>Now</h2>
           <div className={styles.nowGrid}>
             <div className={styles.nowRow}>

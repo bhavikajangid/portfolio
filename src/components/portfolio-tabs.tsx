@@ -164,19 +164,21 @@ export function PortfolioTabs() {
       </div>
 
       <div className={`${styles.tabPanel} ${active === "writing" ? styles.tabPanelActive : ""}`}>
-        <div className={styles.writingList}>
-          <a className={styles.writingItem} href={SUBSTACK_LINKS.essay1} target="_blank" rel="noreferrer">
-            <span className={styles.writingTitle}>What Happens When You Stop Thinking</span>
-            <span className={styles.writingYear}>2026</span>
-          </a>
-          <a className={styles.writingItem} href={SUBSTACK_LINKS.essay2} target="_blank" rel="noreferrer">
-            <span className={styles.writingTitle}>What Two Years of Living Alone Taught</span>
-            <span className={styles.writingYear}>2026</span>
+        <div className={styles.writingCard}>
+          <div className={styles.writingList}>
+            <a className={styles.writingItem} href={SUBSTACK_LINKS.essay1} target="_blank" rel="noreferrer">
+              <span className={styles.writingTitle}>What Happens When You Stop Thinking</span>
+              <span className={styles.writingYear}>2026</span>
+            </a>
+            <a className={styles.writingItem} href={SUBSTACK_LINKS.essay2} target="_blank" rel="noreferrer">
+              <span className={styles.writingTitle}>What Two Years of Living Alone Taught</span>
+              <span className={styles.writingYear}>2026</span>
+            </a>
+          </div>
+          <a className={styles.subLink} href={SUBSTACK_LINKS.substack} target="_blank" rel="noreferrer">
+            Substack →
           </a>
         </div>
-        <a className={styles.subLink} href={SUBSTACK_LINKS.substack} target="_blank" rel="noreferrer">
-          Substack →
-        </a>
       </div>
     </section>
   );
