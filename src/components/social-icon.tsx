@@ -33,7 +33,17 @@ export function SocialIcon({ href, tooltip, className, ariaLabel }: SocialIconPr
       target="_blank"
       rel="noreferrer"
       aria-label={ariaLabel}
-      onClick={() => setOpen((v) => !v)}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onFocus={() => setOpen(true)}
+      onBlur={() => setOpen(false)}
+      onClick={(e) => {
+        // On touch/click: first tap shows tooltip, second tap opens the link.
+        if (!open) {
+          e.preventDefault();
+          setOpen(true);
+        }
+      }}
     >
       <span
         className={`${styles.tooltip}${open ? ` ${styles.tooltipVisible}` : ""}`}

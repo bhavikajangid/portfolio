@@ -63,7 +63,6 @@ export function BackgroundMedia() {
             <source src="/assets/bg.mp4" type="video/mp4" />
           </video>
         ) : null}
-        <div className="site-bg__overlay" />
       </div>
 
       {!motionReduced ? (

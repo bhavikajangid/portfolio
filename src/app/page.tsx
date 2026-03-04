@@ -25,13 +25,7 @@ export default function Page() {
         <TypedHeadline text="this is Bhavika" speedMs={180} />
 
         <p className={styles.heroIntro}>
-          I&apos;m a{" "}
-          <span className={styles.miniThoughtAnchor} tabIndex={0}>
-            software engineer
-            <span className={styles.miniThoughtBubble} role="tooltip" aria-hidden="true">
-              probably a personality hire
-            </span>
-          </span>{" "}
+          I&apos;m a software engineer{" "}
           <span className={styles.atCompany}>@Micron</span>{" "}
           <SocialIcon
             className={`${styles.imageIconLink} ${styles.linkedinChip}`}
@@ -41,15 +35,14 @@ export default function Page() {
           />
           .
         </p>
-        <p className={styles.heroIntro}>
-          I write{" "}
+        <p className={`${styles.heroIntro} ${styles.heroRow}`}>
+          <span className={styles.heroRowText}>I write.</span>
           <SocialIcon
             className={`${styles.imageIconLink} ${styles.substackChip}`}
             href={LINKS.substack}
             ariaLabel="Substack"
             tooltip="bhavikajangid.substack.com"
           />
-          .
         </p>
         <p className={styles.heroIntro}>
           create content{" "}
@@ -76,13 +69,7 @@ export default function Page() {
           .
         </p>
         <p className={styles.heroIntro}>
-          i like to{" "}
-          <span className={styles.miniThoughtAnchor} tabIndex={0}>
-            create things
-            <span className={styles.miniThoughtBubble} role="tooltip" aria-hidden="true">
-              in my head
-            </span>
-          </span>
+          i like to create things
         </p>
         <p className={styles.heroIntro}>
           i make good playlists{" "}

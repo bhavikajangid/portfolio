@@ -39,101 +39,6 @@
   flex-wrap: wrap;
 }
 
-.miniThoughtAnchor {
-  position: relative;
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0;
-  outline: none;
-}
-
-.miniThoughtAnchor::after {
-  content: "";
-  position: absolute;
-  right: -0.95em;
-  top: 50%;
-  width: 0.7em;
-  height: 0.7em;
-  transform: translateY(-45%);
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(78, 216, 212, 0.95), rgba(242, 167, 195, 0.95));
-  box-shadow: 0 10px 30px rgba(20, 21, 27, 0.12);
-}
-
-.miniThoughtAnchor::before {
-  content: "";
-  position: absolute;
-  right: -0.45em;
-  top: 50%;
-  width: 0.38em;
-  height: 0.38em;
-  transform: translateY(-15%);
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(78, 216, 212, 0.75), rgba(242, 167, 195, 0.75));
-  opacity: 0.9;
-}
-
-.miniThoughtAnchor:focus-visible {
-  border-radius: 10px;
-  box-shadow: 0 0 0 4px rgba(78, 216, 212, 0.18);
-}
-
-.miniThoughtBubble {
-  position: absolute;
-  left: auto;
-  right: 0;
-  bottom: calc(100% + 12px);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
-    Arial;
-  font-size: 0.84rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: rgba(20, 21, 27, 0.78);
-  padding: 10px 12px;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(20, 21, 27, 0.12);
-  border-radius: 999px;
-  box-shadow: 0 22px 70px rgba(20, 21, 27, 0.12);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 160ms ease, transform 160ms ease;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.miniThoughtBubble::before,
-.miniThoughtBubble::after {
-  content: "";
-  position: absolute;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(20, 21, 27, 0.12);
-  border-radius: 999px;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-.miniThoughtBubble::before {
-  width: 18px;
-  height: 18px;
-  right: 14px;
-  bottom: -9px;
-}
-
-.miniThoughtBubble::after {
-  width: 12px;
-  height: 12px;
-  right: 4px;
-  bottom: -18px;
-}
-
-.miniThoughtAnchor:hover .miniThoughtBubble,
-.miniThoughtAnchor:focus-visible .miniThoughtBubble {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .heroIntro {
   margin: 0;
   font-size: clamp(1.2rem, 3vw, 1.55rem);
@@ -141,6 +46,18 @@
   line-height: 1.95;
   color: var(--dark);
   letter-spacing: -0.01em;
+}
+
+.heroRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.heroRowText {
+  min-width: 0;
 }
 
 .atCompany {
@@ -571,9 +488,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .inlineChip svg {
-    transition: none;
-  }
-  .miniThoughtBubble {
     transition: none;
   }
   .iconStackItem {
