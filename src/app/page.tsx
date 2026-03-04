@@ -27,7 +27,9 @@ export default function Page() {
             <h1 className={styles.heroName}>
               <span className={styles.aquaWord}>this is </span>
               <span className={`${styles.pinkWord} ${styles.bhavikaWord}`}>
-                <TypingAnimation speedMs={120}>Bhavika</TypingAnimation>
+                <TypingAnimation className={styles.bhavikaUnderline} speedMs={120}>
+                  Bhavika
+                </TypingAnimation>
               </span>
             </h1>
           </div>
@@ -45,7 +47,7 @@ export default function Page() {
               >
                 software engineer
               </span>{" "}
-              at <span className={`${styles.pinkWord} ${styles.wordBold}`}>Micron</span>{" "}
+              at <span className={styles.highlightGreenPinkUnderline}>Micron</span>{" "}
               <SocialIcon
                 className={`${styles.imageIconLink} ${styles.linkedinChip}`}
                 href={LINKS.micron}
@@ -64,7 +66,8 @@ export default function Page() {
               </span>
             </p>
             <p className={styles.heroIntro}>
-              <span className={styles.aquaWordBold}>I</span> create content{" "}
+              <span className={styles.aquaWordBold}>I</span>{" "}
+              <span className={styles.highlightGreenPinkUnderline}>create content</span>{" "}
               <span className={styles.iconStack} aria-label="Platforms">
                 <SocialIcon
                   className={`${styles.iconStackItem} ${styles.iconInstagram}`}
@@ -89,12 +92,18 @@ export default function Page() {
             </p>
             <p className={styles.heroIntro}>
               <span className={styles.aquaWordBold}>I</span> like to{" "}
-              <span className={styles.thoughtAnchor} data-thought="in my head" tabIndex={0} title="in my head">
+              <span
+                className={`${styles.thoughtAnchor} ${styles.highlightGreenPinkUnderline}`}
+                data-thought="in my head"
+                tabIndex={0}
+                title="in my head"
+              >
                 create things
               </span>
             </p>
             <p className={styles.heroIntro}>
-              <span className={styles.aquaWordBold}>I</span> make good playlists{" "}
+              <span className={styles.aquaWordBold}>I</span> make{" "}
+              <span className={styles.highlightGreenPinkUnderline}>playlists</span>{" "}
               <SocialIcon
                 className={`${styles.imageIconLink} ${styles.spotifyChip}`}
                 href={LINKS.spotify}

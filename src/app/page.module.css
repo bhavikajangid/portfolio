@@ -14,13 +14,13 @@
 }
 
 .heroCard {
-  padding: 32px 32px 28px;
-  background: var(--glass);
+  padding: 38px 34px 34px;
+  background: linear-gradient(90deg, rgba(78, 216, 212, 0.06), rgba(242, 167, 195, 0.06)), var(--glass);
   border-radius: 16px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(78, 216, 212, 0.22);
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
 }
 
 .heroCardTopGradient {
@@ -28,16 +28,20 @@
   overflow: hidden;
 }
 
-.heroCardTopGradient > * {
-  position: relative;
+.heroCardTopGradient {
+  background: linear-gradient(90deg, rgba(78, 216, 212, 0.16), rgba(242, 167, 195, 0.16)), var(--glass);
 }
 
-.heroCardTopGradient::before {
-  content: "";
+.heroCardTopGradient::after {
+  content: "✦";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(78, 216, 212, 0.22), rgba(242, 167, 195, 0.22));
-  opacity: 1;
+  top: 18px;
+  right: 18px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.72);
+  text-shadow: 0 12px 40px rgba(255, 255, 255, 0.45);
+  opacity: 0.8;
+  animation: floaty 3.6s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -50,7 +54,20 @@
 .heroBody {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.heroBody::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(78, 216, 212, 0.9), rgba(242, 167, 195, 0.9));
 }
 
 .heroGreeting,
@@ -104,13 +121,65 @@
   font-weight: 700;
 }
 
+.highlightWord {
+  font-size: 1.06em;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgba(242, 167, 195, 0.75);
+  text-underline-offset: 4px;
+}
+
+.highlightPinkAquaUnderline {
+  font-size: 1.06em;
+  color: var(--pink);
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgba(55, 199, 178, 0.85);
+  text-underline-offset: 4px;
+}
+
+.highlightGreenPinkUnderline {
+  font-size: 1.06em;
+  color: var(--aqua-green);
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgba(242, 167, 195, 0.85);
+  text-underline-offset: 4px;
+}
+
+.bhavikaUnderline {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgba(55, 199, 178, 0.85);
+  text-underline-offset: 6px;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
 .heroIntro {
   margin: 0;
   font-size: clamp(1.02rem, 2.4vw, 1.25rem);
   font-weight: 300;
-  line-height: 1.65;
+  line-height: 1.75;
   color: var(--dark);
   letter-spacing: -0.01em;
+}
+
+.heroBody .heroIntro {
+  transition: transform 160ms ease, color 160ms ease;
+}
+
+.heroBody .heroIntro:hover {
+  transform: translateY(-1px);
+  color: rgba(20, 21, 27, 0.92);
 }
 
 .heroRow {
@@ -128,16 +197,17 @@
 .writeLink {
   display: inline-flex;
   align-items: baseline;
-  color: var(--pink);
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(242, 167, 195, 0.65);
+  color: var(--aqua-green);
+  font-size: 1.06em;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgba(242, 167, 195, 0.85);
+  text-underline-offset: 4px;
   padding-bottom: 0.04em;
 }
 
 .writeLink:hover {
   background: var(--pink-soft);
-  border-bottom-color: rgba(242, 167, 195, 0.85);
 }
 
 .writeLink:focus-visible {
@@ -475,26 +545,26 @@
 }
 
 .nowCard {
-  background: var(--glass);
+  background: linear-gradient(90deg, rgba(78, 216, 212, 0.06), rgba(242, 167, 195, 0.06)), var(--glass);
   border-radius: 16px;
-  padding: 24px 26px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  padding: 26px 28px;
+  border: 1px solid rgba(78, 216, 212, 0.2);
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
 }
 
 .mfaCard {
-  background: var(--glass);
+  background: linear-gradient(90deg, rgba(78, 216, 212, 0.06), rgba(242, 167, 195, 0.06)), var(--glass);
   border-radius: 16px;
   padding: 28px 32px;
   position: relative;
   overflow: hidden;
   margin-bottom: 40px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(242, 167, 195, 0.22);
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
 }
 
 .mfaCard::before {
@@ -600,7 +670,7 @@
 }
 
 .sectionTitle {
-  font-family: var(--font-intro), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
     Arial;
   font-size: 1.2rem;
   font-weight: 700;
@@ -671,7 +741,7 @@
     font-size: 1.15rem;
   }
   .heroCard {
-    padding: 26px 22px 22px;
+    padding: 30px 24px 26px;
   }
   .mfaCounter {
     font-size: 1.6rem;

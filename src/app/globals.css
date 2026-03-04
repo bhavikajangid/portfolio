@@ -33,8 +33,8 @@ body {
   --muted: rgba(20, 21, 27, 0.62);
   --border: rgba(20, 21, 27, 0.1);
 
-  --glass: rgba(255, 255, 255, 0.48);
-  --glass-strong: rgba(255, 255, 255, 0.62);
+  --glass: rgba(255, 252, 248, 0.36);
+  --glass-strong: rgba(255, 252, 248, 0.5);
   --shadow: 0 22px 70px rgba(20, 21, 27, 0.1);
   --blur: 0px;
 }
