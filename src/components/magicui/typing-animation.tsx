@@ -34,10 +34,11 @@ export function TypingAnimation({
   const text = String(children);
   const [length, setLength] = React.useState(0);
   const hasCompletedRef = React.useRef(false);
+  const reducedMotion = prefersReducedMotion();
 
   React.useEffect(() => {
     hasCompletedRef.current = false;
-    if (prefersReducedMotion()) {
+    if (reducedMotion) {
       setLength(text.length);
       return;
     }
@@ -65,6 +66,7 @@ export function TypingAnimation({
   }, [speedMs, text]);
 
   const shown = text.slice(0, length);
+  const showCursor = cursor && !reducedMotion && length < text.length;
 
   React.useEffect(() => {
     if (hasCompletedRef.current) return;
@@ -77,17 +79,17 @@ export function TypingAnimation({
     <span className={className} style={{ display: "inline-flex", alignItems: "center" }}>
       <span aria-hidden="true">{shown}</span>
       <span className="sr-only">{text}</span>
-      {cursor ? (
+      {showCursor ? (
         <span
           aria-hidden="true"
           style={{
             display: "inline-block",
-            width: "0.6ch",
-            marginLeft: "0.15ch",
+            width: 0,
+            marginLeft: 0,
             borderRight: "2px solid rgba(20, 21, 27, 0.55)",
             height: "0.95em",
             transform: "translateY(0.06em)",
-            animation: prefersReducedMotion() ? undefined : "caretBlink 700ms step-end infinite",
+            animation: "caretBlink 700ms step-end infinite",
           }}
         />
       ) : null}

@@ -1,7 +1,7 @@
 import { MfaCounter, MfaDayOnly } from "@/components/mfa-counter";
 import { PortfolioTabs } from "@/components/portfolio-tabs";
 import { SocialIcon } from "@/components/social-icon";
-import { TypedHeadline } from "@/components/typed-headline";
+import { TypingAnimation } from "@/components/magicui/typing-animation";
 import styles from "./page.module.css";
 
 const LINKS = {
@@ -22,11 +22,24 @@ export default function Page() {
     <div className={styles.container}>
       <section className={styles.hero}>
         <p className={styles.heroGreeting}>Hi 👋</p>
-        <TypedHeadline text="this is Bhavika" speedMs={180} />
+        <h1 className={styles.heroName}>
+          <span className={styles.pinkWord}>this is </span>
+          <span className={styles.aquaWord}>
+            <TypingAnimation speedMs={120}>Bhavika</TypingAnimation>
+          </span>
+        </h1>
 
         <p className={styles.heroIntro}>
-          I&apos;m a software engineer{" "}
-          <span className={styles.atCompany}>@Micron</span>{" "}
+          <span className={styles.aquaWordBold}>I</span> am a{" "}
+          <span
+            className={`${styles.thoughtAnchor} ${styles.thoughtAnchorTop}`}
+            data-thought="probably a personality hire"
+            tabIndex={0}
+            title="probably a personality hire"
+          >
+            software engineer
+          </span>{" "}
+          at <span className={`${styles.pinkWord} ${styles.wordBold}`}>Micron</span>{" "}
           <SocialIcon
             className={`${styles.imageIconLink} ${styles.linkedinChip}`}
             href={LINKS.micron}
@@ -36,16 +49,16 @@ export default function Page() {
           .
         </p>
         <p className={`${styles.heroIntro} ${styles.heroRow}`}>
-          <span className={styles.heroRowText}>I write.</span>
-          <SocialIcon
-            className={`${styles.imageIconLink} ${styles.substackChip}`}
-            href={LINKS.substack}
-            ariaLabel="Substack"
-            tooltip="bhavikajangid.substack.com"
-          />
+          <span className={styles.heroRowText}>
+            <span className={styles.aquaWordBold}>I</span>{" "}
+            <a className={styles.writeLink} href={LINKS.substack} target="_blank" rel="noreferrer">
+              <TypingAnimation speedMs={120}>write</TypingAnimation>
+            </a>
+            .
+          </span>
         </p>
         <p className={styles.heroIntro}>
-          create content{" "}
+          <span className={styles.aquaWordBold}>I</span> create content{" "}
           <span className={styles.iconStack} aria-label="Platforms">
             <SocialIcon
               className={`${styles.iconStackItem} ${styles.iconInstagram}`}
@@ -69,10 +82,18 @@ export default function Page() {
           .
         </p>
         <p className={styles.heroIntro}>
-          i like to create things
+          <span className={styles.aquaWordBold}>I</span> like to{" "}
+          <span
+            className={styles.thoughtAnchor}
+            data-thought="in my head"
+            tabIndex={0}
+            title="in my head"
+          >
+            create things
+          </span>
         </p>
         <p className={styles.heroIntro}>
-          i make good playlists{" "}
+          <span className={styles.aquaWordBold}>I</span> make good playlists{" "}
           <SocialIcon
             className={`${styles.imageIconLink} ${styles.spotifyChip}`}
             href={LINKS.spotify}

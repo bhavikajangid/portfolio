@@ -71,9 +71,17 @@ export function BackgroundMedia() {
             type="button"
             className="site-bg__sound"
             onClick={toggleSound}
+            aria-pressed={!muted}
             aria-label={muted ? "Turn sound on" : "Turn sound off"}
+            title={muted ? "Turn sound on" : "Turn sound off"}
           >
-            {muted ? "Sound off" : "Sound on"}
+            <img
+              className="site-bg__soundIcon"
+              src={muted ? "/assets/sound-off.png" : "/assets/sound-on.png"}
+              alt=""
+              aria-hidden="true"
+              draggable={false}
+            />
           </button>
         </div>
       ) : null}
