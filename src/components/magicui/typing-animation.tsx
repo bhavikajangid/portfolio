@@ -86,7 +86,7 @@ export function TypingAnimation({
             display: "inline-block",
             width: 0,
             marginLeft: 0,
-            borderRight: "2px solid rgba(20, 21, 27, 0.55)",
+            borderRight: "2px solid currentColor",
             height: "0.95em",
             transform: "translateY(0.06em)",
             animation: "caretBlink 700ms step-end infinite",

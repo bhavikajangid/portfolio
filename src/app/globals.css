@@ -15,28 +15,133 @@ body {
     Arial, "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--dark);
   line-height: 1.6;
-  background: var(--bg);
+  background: transparent;
 }
 
 :root {
-  --bg: #fbfbfe;
-  --aqua: rgba(78, 216, 212, 0.12);
-  --aqua-green: #37c7b2;
+  --sky-top: #a8e8f0;
+  --sky-mid: #c4f0ec;
+  --sky-bot: #d8f8f2;
 
-  --pink: #f2a7c3;
-  --pink-soft: rgba(242, 167, 195, 0.18);
+  --text: #2a4a5a;
+  --text-muted: #7aabb8;
+  --ink-border: rgb(42 74 90 / 0.28);
+
+  --teal: #3cc9c9;
+  --teal-rgb: 60 201 201;
+  --pink: #e85d8a;
+  --pink-rgb: 232 93 138;
+
+  --card-bg: rgba(255, 255, 255, 0.55);
+  --card-border: rgba(255, 255, 255, 0.85);
+  --card-shadow: rgba(100, 200, 210, 0.18);
+  --bar-left: 4px solid #3cc9c9;
+  --progress-bg: #ddf4f0;
+  --footer-bg: rgba(255, 255, 255, 0.48);
+  --footer-border: rgba(255, 255, 255, 0.85);
+
+  --cloud-back-fill: #ffffff;
+  --cloud-back-hl: #f5f5f5;
+  --cloud-back-sh: #e8e8e8;
+  --cloud-front-fill: #dcd0f4;
+  --cloud-front-hl: #eae4f8;
+  --cloud-front-sh: #c8bce8;
+
+  --tab-accent-rgb: 220 208 244;
+  --tab-border: rgb(var(--tab-accent-rgb) / 0.28);
+  --tab-border-hover: rgb(var(--tab-accent-rgb) / 0.38);
+  --tab-border-active: rgb(var(--tab-accent-rgb) / 0.48);
+  --tab-hover-bg: rgb(var(--tab-accent-rgb) / 0.28);
+  --tab-active-bg: rgb(var(--tab-accent-rgb) / 0.44);
+
+  --aqua: rgb(var(--teal-rgb) / 0.12);
+  --aqua-green: var(--teal);
+  --pink-soft: rgb(var(--pink-rgb) / 0.18);
   --lavender: #9a86ff;
   --green: #a8c5a0;
   --green-soft: rgba(168, 197, 160, 0.18);
 
-  --dark: #14151b;
-  --muted: rgba(20, 21, 27, 0.62);
-  --border: rgba(20, 21, 27, 0.1);
+  --wavy-pink: rgb(var(--pink-rgb) / 0.85);
+  --wavy-aqua: rgb(var(--teal-rgb) / 0.85);
+  --wavy-neutral: rgb(var(--pink-rgb) / 0.75);
 
-  --glass: rgba(255, 252, 248, 0.36);
-  --glass-strong: rgba(255, 252, 248, 0.5);
-  --shadow: 0 22px 70px rgba(20, 21, 27, 0.1);
+  --hl-green-pink-text: var(--aqua-green);
+  --hl-green-pink-underline: var(--wavy-pink);
+  --hl-pink-aqua-text: var(--pink);
+  --hl-pink-aqua-underline: var(--wavy-aqua);
+  --bhavika-underline: var(--wavy-aqua);
+
+  --write-text: var(--aqua-green);
+  --write-underline: var(--wavy-pink);
+  --write-hover-bg: var(--pink-soft);
+
+  --dark: var(--text);
+  --muted: var(--text-muted);
+  --border: var(--card-border);
+
+  --glass: var(--card-bg);
+  --glass-strong: rgba(255, 255, 255, 0.62);
+  --shadow: 0 8px 32px var(--card-shadow);
   --blur: 0px;
+}
+
+html[data-theme="night"] {
+  --sky-top: #1a2332;
+  --sky-mid: #1e2a3e;
+  --sky-bot: #222e44;
+
+  --text: #ffffff;
+  --text-muted: rgb(255 255 255 / 0.78);
+  --ink-border: rgb(255 255 255 / 0.22);
+
+  --teal: #4dd9c0;
+  --teal-rgb: 77 217 192;
+  --pink: #f07aa0;
+  --pink-rgb: 240 122 160;
+
+  --card-bg: rgba(30, 42, 58, 0.72);
+  --card-border: rgba(255, 255, 255, 0.07);
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --bar-left: 4px solid #4dd9c0;
+  --progress-bg: rgb(var(--teal-rgb) / 0.15);
+  --footer-bg: rgba(30, 42, 58, 0.72);
+  --footer-border: rgba(255, 255, 255, 0.07);
+
+  --cloud-back-fill: #8899bb;
+  --cloud-back-hl: #aab0cc;
+  --cloud-back-sh: #667799;
+  --cloud-front-fill: #b8aace;
+  --cloud-front-hl: #ccc0e0;
+  --cloud-front-sh: #9a8ab0;
+
+  --tab-accent-rgb: 184 170 206;
+  --tab-border: rgb(var(--tab-accent-rgb) / 0.22);
+  --tab-border-hover: rgb(var(--tab-accent-rgb) / 0.32);
+  --tab-border-active: rgb(var(--tab-accent-rgb) / 0.4);
+  --tab-hover-bg: rgb(var(--tab-accent-rgb) / 0.24);
+  --tab-active-bg: rgb(var(--tab-accent-rgb) / 0.36);
+
+  --aqua: rgb(var(--teal-rgb) / 0.12);
+  --aqua-green: var(--teal);
+  --pink-soft: rgb(var(--pink-rgb) / 0.18);
+
+  --wavy-pink: rgb(var(--pink-rgb) / 0.85);
+  --wavy-aqua: rgb(var(--teal-rgb) / 0.85);
+  --wavy-neutral: rgb(var(--teal-rgb) / 0.75);
+
+  --hl-green-pink-text: var(--pink);
+  --hl-green-pink-underline: var(--wavy-aqua);
+  --hl-pink-aqua-text: var(--aqua-green);
+  --hl-pink-aqua-underline: var(--wavy-pink);
+  --bhavika-underline: var(--wavy-pink);
+
+  --write-text: var(--pink);
+  --write-underline: var(--wavy-aqua);
+  --write-hover-bg: var(--aqua);
+
+  --glass: var(--card-bg);
+  --glass-strong: rgba(30, 42, 58, 0.8);
+  --shadow: 0 8px 32px var(--card-shadow);
 }
 
 .site-content {
@@ -49,27 +154,104 @@ body {
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  background: var(--bg);
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 55%, var(--sky-bot) 100%);
+  transition: background 0.6s ease;
   width: 100vw;
   height: 100vh;
   pointer-events: none;
 }
 
-.site-bg__video {
+.site-bg__stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+html[data-theme="night"] .site-bg__stars {
+  opacity: 1;
+}
+
+.site-bg__star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: twinkle var(--dur, 3s) infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.15;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+.site-bg__sun {
+  position: absolute;
+  top: 32px;
+  right: 80px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe97a 40%, #ffd04a 100%);
+  box-shadow: 0 0 40px 14px rgba(255, 230, 80, 0.35), 0 0 80px 30px rgba(255, 220, 60, 0.15);
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+html[data-theme="night"] .site-bg__sun {
+  opacity: 0;
+}
+
+.site-bg__moon {
+  position: absolute;
+  top: 32px;
+  right: 80px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #e8dfc8;
+  box-shadow: 0 0 30px 10px rgba(220, 210, 170, 0.25);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+html[data-theme="night"] .site-bg__moon {
+  opacity: 1;
+}
+
+.site-bg__cloudsBack,
+.site-bg__cloudsFront {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
-  opacity: 1;
-  filter: none;
   pointer-events: none;
 }
 
-.site-bg__video {
-  object-fit: cover;
+@keyframes floatCloud {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(8px) translateY(-4px);
+  }
 }
+
+.cloud-float-1 {
+  animation: floatCloud 6s ease-in-out infinite;
+}
+.cloud-float-2 {
+  animation: floatCloud 8s ease-in-out 1s infinite;
+}
+.cloud-float-3 {
+  animation: floatCloud 10s ease-in-out 2s infinite;
+}
+
 
 .site-bg-controls {
   position: fixed;
@@ -79,7 +261,7 @@ body {
   pointer-events: auto;
 }
 
-.site-bg__sound {
+.theme-toggle {
   font: inherit;
   display: grid;
   place-items: center;
@@ -87,37 +269,47 @@ body {
   height: 44px;
   padding: 0;
   border-radius: 999px;
-  border: 1px solid rgba(20, 21, 27, 0.14);
-  background: rgba(255, 255, 255, 0.62);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: 0 18px 60px rgba(20, 21, 27, 0.12);
+  border: 2px solid var(--card-border);
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px var(--card-shadow);
   cursor: pointer;
   transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
 }
 
-.site-bg__soundIcon {
-  width: 22px;
-  height: 22px;
-  display: block;
+.theme-toggle:hover {
+  transform: scale(1.08);
 }
 
-.site-bg__sound:hover {
-  transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 22px 70px rgba(20, 21, 27, 0.14);
-}
-
-.site-bg__sound:focus-visible {
+.theme-toggle:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(78, 216, 212, 0.22), 0 22px 70px rgba(20, 21, 27, 0.14);
+  box-shadow: 0 0 0 4px rgb(var(--teal-rgb) / 0.22), 0 4px 16px var(--card-shadow);
+}
+
+.theme-toggle__day,
+.theme-toggle__night {
+  position: absolute;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.theme-toggle__night {
+  opacity: 0;
+  transform: rotate(-30deg);
+}
+
+html[data-theme="night"] .theme-toggle__day {
+  opacity: 0;
+  transform: rotate(30deg);
+}
+
+html[data-theme="night"] .theme-toggle__night {
+  opacity: 1;
+  transform: rotate(0deg);
 }
 
 @supports (height: 100svh) {
   .site-bg {
-    height: 100svh;
-  }
-  .site-bg__video {
     height: 100svh;
   }
 }

@@ -12,8 +12,8 @@
 }
 
 .tabBtn {
-  background: linear-gradient(90deg, rgba(78, 216, 212, 0.06), rgba(242, 167, 195, 0.06)), var(--glass);
-  border: 1px solid rgba(78, 216, 212, 0.18);
+  background: var(--glass);
+  border: 1px solid var(--tab-border);
   border-radius: 100px;
   cursor: pointer;
   font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
@@ -22,7 +22,7 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(20, 21, 27, 0.72);
+  color: var(--muted);
   padding: 10px 20px;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
   white-space: nowrap;
@@ -32,14 +32,14 @@
 }
 
 .tabBtn:hover {
-  background: linear-gradient(90deg, rgba(78, 216, 212, 0.26), rgba(242, 167, 195, 0.26));
-  border-color: rgba(78, 216, 212, 0.34);
+  background: var(--tab-hover-bg);
+  border-color: var(--tab-border-hover);
   color: var(--dark);
 }
 
 .tabBtnActive {
-  background: linear-gradient(90deg, rgba(78, 216, 212, 0.5), rgba(242, 167, 195, 0.5));
-  border-color: rgba(242, 167, 195, 0.38);
+  background: var(--tab-active-bg);
+  border-color: var(--tab-border-active);
   color: var(--dark);
   font-weight: 600;
 }
@@ -53,13 +53,14 @@
 }
 
 .liCard {
-  border: 1px solid rgba(242, 167, 195, 0.18);
-  border-radius: 14px;
-  background: linear-gradient(90deg, rgba(78, 216, 212, 0.06), rgba(242, 167, 195, 0.06)), var(--glass);
-  box-shadow: 0 18px 60px rgba(20, 21, 27, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(18px) saturate(125%);
-  -webkit-backdrop-filter: blur(18px) saturate(125%);
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
   padding: 22px 22px;
+  box-shadow: var(--shadow);
+  transition: background 0.5s, border 0.5s, box-shadow 0.5s;
 }
 
 .liHeading {
@@ -76,7 +77,7 @@
   gap: 12px;
   align-items: flex-start;
   padding: 8px 0 14px;
-  border-bottom: 1px solid rgba(20, 21, 27, 0.08);
+  border-bottom: 1px solid var(--ink-border);
 }
 
 .liLogo {
@@ -132,7 +133,7 @@
   top: 14px;
   bottom: 10px;
   width: 1px;
-  background: rgba(20, 21, 27, 0.12);
+  background: var(--ink-border);
 }
 
 .liRole {
@@ -182,7 +183,7 @@
 .liBullets li {
   position: relative;
   padding-left: 14px;
-  color: rgba(20, 21, 27, 0.78);
+  color: var(--dark);
   line-height: 1.65;
   font-size: 0.9rem;
 }
@@ -192,7 +193,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  color: rgba(20, 21, 27, 0.55);
+  color: var(--muted);
   font-size: 1.2rem;
   line-height: 1.2;
 }
@@ -243,7 +244,7 @@
 
 .expBullets li {
   font-size: 0.88rem;
-  color: #333;
+  color: var(--dark);
   line-height: 1.65;
   padding-left: 16px;
   position: relative;
@@ -259,21 +260,22 @@
 }
 
 .projectCard {
-  border: 1px solid rgba(78, 216, 212, 0.18);
-  border-radius: 12px;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
   padding: 24px;
   margin-bottom: 16px;
   transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
-  background: linear-gradient(90deg, rgba(78, 216, 212, 0.06), rgba(242, 167, 195, 0.06)), var(--glass);
-  box-shadow: 0 18px 60px rgba(20, 21, 27, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(18px) saturate(125%);
-  -webkit-backdrop-filter: blur(18px) saturate(125%);
+  box-shadow: var(--shadow);
+  transition: background 0.5s, border 0.5s, box-shadow 0.5s;
 }
 
 .projectCard:hover {
-  border-color: rgba(242, 167, 195, 0.5);
-  box-shadow: 0 22px 70px rgba(20, 21, 27, 0.1);
-  background: rgba(255, 255, 255, 0.72);
+  border-color: var(--card-border);
+  box-shadow: var(--shadow);
+  background: var(--card-bg);
 }
 
 .projectName {
@@ -293,7 +295,7 @@
 
 .projectBullets li {
   font-size: 0.87rem;
-  color: #444;
+  color: var(--dark);
   line-height: 1.65;
   padding-left: 16px;
   position: relative;
@@ -310,8 +312,8 @@
 
 .projectTag {
   display: inline-block;
-  background: rgba(78, 216, 212, 0.12);
-  color: rgba(20, 21, 27, 0.72);
+  background: rgb(var(--teal-rgb) / 0.12);
+  color: var(--muted);
   font-size: 0.72rem;
   font-weight: 500;
   padding: 3px 10px;
@@ -321,13 +323,14 @@
 }
 
 .writingCard {
-  border: 1px solid rgba(242, 167, 195, 0.18);
-  border-radius: 12px;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
   padding: 22px 22px;
-  background: linear-gradient(90deg, rgba(78, 216, 212, 0.06), rgba(242, 167, 195, 0.06)), var(--glass);
-  box-shadow: 0 18px 60px rgba(20, 21, 27, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(18px) saturate(125%);
-  -webkit-backdrop-filter: blur(18px) saturate(125%);
+  box-shadow: var(--shadow);
+  transition: background 0.5s, border 0.5s, box-shadow 0.5s;
 }
 
 .writingList {
@@ -351,7 +354,7 @@
 }
 
 .writingItem:hover {
-  color: rgba(20, 21, 27, 0.82);
+  color: var(--dark);
 }
 
 .writingTitle {
@@ -364,7 +367,7 @@
 }
 
 .writingItem:hover .writingTitle {
-  text-decoration-color: rgba(242, 167, 195, 0.6);
+  text-decoration-color: rgb(var(--pink-rgb) / 0.6);
 }
 
 .writingYear {
@@ -375,9 +378,9 @@
 .subLink {
   font-size: 0.85rem;
   font-weight: 500;
-  color: rgba(20, 21, 27, 0.74);
+  color: var(--muted);
   text-decoration: none;
-  border-bottom: 1px solid rgba(20, 21, 27, 0.24);
+  border-bottom: 1px solid var(--ink-border);
   padding-bottom: 1px;
 }
 

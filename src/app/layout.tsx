@@ -40,6 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="night"
       className={`${poppins.variable} ${playfair.variable} ${comfortaa.variable} ${pacifico.variable}`}
     >
       <body>
